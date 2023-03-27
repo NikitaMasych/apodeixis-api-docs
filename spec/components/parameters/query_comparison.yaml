@@ -1,0 +1,8 @@
+in: query
+name: comparison
+required: true
+schema:
+  type: string
+  enum:
+    - less
+    - greater

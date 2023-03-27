@@ -1,0 +1,13 @@
+allOf:
+  - $ref: '#/components/schemas/PostsAmountKey'
+  - type: object
+    required:
+      - attributes
+    properties:
+      attributes:
+        type: object
+        required:
+          - amount
+        properties:
+          amount:
+            type: integer

@@ -1,0 +1,5 @@
+in: query
+name: id
+required: true
+schema:
+  type: integer

@@ -1,0 +1,25 @@
+type: object
+required:
+  - errors
+properties:
+  errors:
+    type: array
+    items:
+      type: object
+      required:
+        - title
+        - code
+      properties:
+        title:
+          type: string
+        detail:
+          type: string
+        code:
+          type: integer
+          enum:
+            - 400
+            - 401
+            - 404
+            - 409
+            - 422
+            - 500

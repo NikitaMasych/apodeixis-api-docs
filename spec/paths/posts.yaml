@@ -1,0 +1,35 @@
+get:
+  tags:
+    - Post
+  summary: Get posts headers.
+  description: >-
+    Retrieves limited amount of posts headers from specified id in direction of comparison with respect to id.
+  operationId: getPostsHeaders
+  parameters:
+    - $ref: '#/components/parameters/query_id'
+    - $ref: '#/components/parameters/query_comparison'
+    - $ref: '#/components/parameters/query_limit'
+  responses:
+    200:
+      description: "Success: got posts headers."
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PostHeader'
+    404:
+      description: "Not found: posts from id."
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: '#/components/schemas/Errors'
+    500:
+      description: Internal server error.
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: '#/components/schemas/Errors'

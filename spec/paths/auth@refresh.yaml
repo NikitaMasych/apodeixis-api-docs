@@ -1,0 +1,48 @@
+patch:
+  tags:
+    - Refresh
+  summary: Refresh token
+  operationId: refresh
+  description:  >-
+    Endpoint for refreshing jwt token. It takes old refresh token and in case of success
+    creates new token with the same data inside but with extended term.
+  requestBody:
+    content:
+      application/vnd.api+json:
+        schema:
+          type: object
+          required:
+            - data
+          properties:
+            data:
+              $ref: "#/components/schemas/RefreshToken"
+  responses:
+    200:
+      description: "Success: refreshed."
+      content:
+        application/vnd.api+json:
+          schema:
+            type: object
+            required:
+              - data
+            properties:
+              data:
+                $ref: "#/components/schemas/AuthToken"
+    400:
+      description: Bad request.
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: "#/components/schemas/Errors"
+    404:
+      description: "Not found: token does not exist."
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: '#/components/schemas/Errors'
+    500:
+      description: Internal server error.
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: "#/components/schemas/Errors"

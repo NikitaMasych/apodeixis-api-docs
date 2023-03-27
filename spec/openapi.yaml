@@ -1,0 +1,8 @@
+openapi: 3.0.0
+info:
+  version: 0.0.1
+  title: Apodeixis Gast Backend
+  description: >-
+    Responsible: Nikita Masych. Contacts:
+      - Telegram: t.me/Just_law_abiding_citizen
+      - Email: nikitamasich152@gmail.com
